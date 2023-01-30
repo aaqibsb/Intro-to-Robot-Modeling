@@ -1,0 +1,36 @@
+# Robot name goes here
+skateboard:
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # gazebo_ros_control:
+  #   pid_gains:
+  #     rear_left_shaft_joint:
+  #       p: 10
+  #       i: 0.01 
+  #       d: 0
+  #     rear_right_shaft_joint: 
+  #       p: 10 
+  #       i: 0.01
+  #       d: 0
+
+  rear_motor_left: 
+    joint: rear_left_shaft_joint
+    pid: {p: 70, i: 3, d: 10.0}
+    type: velocity_controllers/JointVelocityController
+  rear_motor_right: 
+    joint: rear_right_shaft_joint
+    pid: {p: 70, i: 3, d: 10.0}
+    type: velocity_controllers/JointVelocityController
+  left_castor_motor: 
+    joint: front_left_castor_joint
+    pid: {p: 70, i: 3, d: 10.0}
+    type: effort_controllers/JointPositionController
+  right_castor_motor: 
+    joint: front_right_castor_joint
+    pid: {p: 70, i: 3, d: 10.0}
+    type: effort_controllers/JointPositionController
+
+
+ 

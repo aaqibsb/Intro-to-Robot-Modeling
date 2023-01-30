@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="skateboard">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00458216531210875 8.24703628388157E-07 0.293836175998976"
+        rpy="0 0 0" />
+      <mass
+        value="46.6638789557158" />
+      <inertia
+        ixx="0.974368837581962"
+        ixy="8.66048070137321E-06"
+        ixz="-0.00163912437239371"
+        iyy="3.40173203153984"
+        iyz="1.79342534681446E-06"
+        izz="4.29781608665177" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="front_left_castor">
+    <inertial>
+      <origin
+        xyz="0.004299264833723 1.11022302462516E-16 -0.0254329559279005"
+        rpy="0 0 0" />
+      <mass
+        value="0.375748041819476" />
+      <inertia
+        ixx="0.00186061964746791"
+        ixy="-3.32056608727919E-21"
+        ixz="0.000120223941784029"
+        iyy="0.00141382013714359"
+        iyz="2.1063602007753E-19"
+        izz="0.00087989031280542" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/front_left_castor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/front_left_castor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_castor_joint"
+    type="revolute">
+    <origin
+      xyz="0.26634 0.1651 0.23622"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_left_castor" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1000000"
+      upper="1000000"
+      effort="10"
+      velocity="100" />
+  </joint>
+  <link
+    name="front_left_shaft">
+    <inertial>
+      <origin
+        xyz="0 0 -0.0635"
+        rpy="0 0 0" />
+      <mass
+        value="0.0858595098594949" />
+      <inertia
+        ixx="0.0001009908613904"
+        ixy="2.99244959851748E-38"
+        ixz="1.26927539495442E-38"
+        iyy="0.0001009908613904"
+        iyz="-3.2318755504395E-21"
+        izz="9.64668125467686E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/front_left_shaft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/front_left_shaft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_shaft_joint"
+    type="continuous">
+    <!-- <dynamics damping="0.7" friction="100.0"/> -->
+    <origin
+      xyz="0.01778 0.0635 -0.13157"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="front_left_castor" />
+    <child
+      link="front_left_shaft" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="front_left_wheel">
+    <inertial>
+      <origin
+        xyz="-1.01629056954433E-05 -0.000757681850388048 -0.0634999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="1.55942631528513" />
+      <inertia
+        ixx="0.00546334240124887"
+        ixy="4.47252015876343E-10"
+        ixz="1.97875687779425E-19"
+        iyy="0.00546337573952603"
+        iyz="6.88553022987154E-20"
+        izz="0.00981623598058744" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/front_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/front_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="front_left_shaft" />
+    <child
+      link="front_left_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="front_right_castor">
+    <inertial>
+      <origin
+        xyz="0.00429851965178085 -8.00431992211692E-05 -0.0254329559279003"
+        rpy="0 0 0" />
+      <mass
+        value="0.375748041819476" />
+      <inertia
+        ixx="0.00186046477537452"
+        ixy="-8.31701810276659E-06"
+        ixz="0.000120203103637531"
+        iyy="0.00141397500923697"
+        iyz="-2.23831499001512E-06"
+        izz="0.000879890312805418" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/front_right_castor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/front_right_castor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_castor_joint"
+    type="revolute">
+    <origin
+      xyz="0.26634 -0.1651 0.23622"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_right_castor" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1000000"
+      upper="1000000"
+      effort="10"
+      velocity="100" />
+  </joint>
+  <link
+    name="front_right_shaft">
+    <inertial>
+      <origin
+        xyz="0.00118223541631401 0 0.0634889936872559"
+        rpy="0 0 0" />
+      <mass
+        value="0.0858595098594949" />
+      <inertia
+        ixx="0.000100959199170391"
+        ixy="-4.58640336196167E-23"
+        ixz="-1.70034026944128E-06"
+        iyy="0.0001009908613904"
+        iyz="-3.94881177138166E-21"
+        izz="9.67834347468652E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/front_right_shaft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/front_right_shaft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_shaft_joint"
+    type="continuous">
+    <!-- <dynamics damping="0.7" friction="100.0"/> -->
+    <origin
+      xyz="0.016595 -0.06382 -0.13157"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="front_right_castor" />
+    <child
+      link="front_right_shaft" />
+    <axis
+      xyz="-0.018618 0 0.99983" />
+  </joint>
+  <link
+    name="front_right_wheel">
+    <inertial>
+      <origin
+        xyz="0.0011720742721324 -0.000757681850388159 0.0634891828990203"
+        rpy="0 0 0" />
+      <mass
+        value="1.55942631528513" />
+      <inertia
+        ixx="0.00546485122506209"
+        ixy="4.47174493742951E-10"
+        ixz="8.1027606034062E-05"
+        iyy="0.00546337573952603"
+        iyz="-8.32688455325099E-12"
+        izz="0.00981472715677422" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/front_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/front_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="front_right_shaft" />
+    <child
+      link="front_right_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rear_left_castor">
+    <inertial>
+      <origin
+        xyz="-4.44089209850063E-16 -0.121707358571448 -0.06858"
+        rpy="0 0 0" />
+      <mass
+        value="0.366948048129126" />
+      <inertia
+        ixx="0.000748556266523244"
+        ixy="-1.0023345895942E-19"
+        ixz="-1.34466807184789E-19"
+        iyy="0.000740864473475818"
+        iyz="-8.44762671544618E-20"
+        izz="0.000632863553143694" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/rear_left_castor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/rear_left_castor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_castor_joint"
+    type="fixed">
+    <origin
+      xyz="-0.24166 0.20828 0.10478"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_left_castor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rear_left_shaft">
+    <inertial>
+      <origin
+        xyz="0 -1.11022302462516E-16 -0.0685799999999998"
+        rpy="0 0 0" />
+      <mass
+        value="0.0679514721041126" />
+      <inertia
+        ixx="5.51726293118822E-05"
+        ixy="2.58732738125917E-22"
+        ixz="-6.57806775316306E-21"
+        iyy="5.51726293118822E-05"
+        iyz="-9.63988248762429E-21"
+        izz="7.75429241942671E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/rear_left_shaft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/rear_left_shaft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_shaft_joint"
+    type="continuous">
+    <!-- <dynamics damping="0.7" friction="100.0"/> -->
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="rear_left_castor" />
+    <child
+      link="rear_left_shaft" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rear_left_wheel">
+    <inertial>
+      <origin
+        xyz="-9.36913719651322E-05 -0.000751935501142942 -0.06858"
+        rpy="0 0 0" />
+      <mass
+        value="1.55942631528513" />
+      <inertia
+        ixx="0.00546334290510486"
+        ixy="4.09192546748377E-09"
+        ixz="2.12442506263347E-19"
+        iyy="0.00546337523567005"
+        iyz="1.6750341351256E-19"
+        izz="0.00981623598058744" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/rear_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/rear_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="rear_left_shaft" />
+    <child
+      link="rear_left_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rear_right_castor">
+    <inertial>
+      <origin
+        xyz="-1.11022302462516E-16 -0.121707358571448 0.06858"
+        rpy="0 0 0" />
+      <mass
+        value="0.366948048129126" />
+      <inertia
+        ixx="0.000748556266523244"
+        ixy="-2.42371862211308E-20"
+        ixz="-1.3413703457399E-19"
+        iyy="0.000740864473475818"
+        iyz="-5.55634906273331E-20"
+        izz="0.000632863553143694" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/rear_right_castor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/rear_right_castor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_castor_joint"
+    type="fixed">
+    <origin
+      xyz="-0.241661291056331 -0.20828 0.104775"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_right_castor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rear_right_shaft">
+    <inertial>
+      <origin
+        xyz="1.11022302462516E-16 0 0.0685800000000001"
+        rpy="0 0 0" />
+      <mass
+        value="0.0679514721041126" />
+      <inertia
+        ixx="5.51726293118822E-05"
+        ixy="2.79660407623498E-22"
+        ixz="-1.08428547833035E-20"
+        iyy="5.51726293118822E-05"
+        iyz="2.72103108665618E-21"
+        izz="7.7542924194267E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/rear_right_shaft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/rear_right_shaft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_shaft_joint"
+    type="continuous">
+    <!-- <dynamics damping="0.7" friction="100.0"/> -->
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="rear_right_castor" />
+    <child
+      link="rear_right_shaft" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rear_right_wheel">
+    <inertial>
+      <origin
+        xyz="-9.36913719651322E-05 -0.000751935501142831 0.06858"
+        rpy="0 0 0" />
+      <mass
+        value="1.55942631528513" />
+      <inertia
+        ixx="0.00546334290510487"
+        ixy="4.09192546791387E-09"
+        ixz="1.90526703046973E-18"
+        iyy="0.00546337523567006"
+        iyz="-1.08792945849083E-19"
+        izz="0.00981623598058745" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/rear_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://skateboard/meshes/rear_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="rear_right_shaft" />
+    <child
+      link="rear_right_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <link name="dummy_link" >
+    <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+  </link>
+  <joint name="dummy_joint" type="fixed">
+    <parent link="dummy_link"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 0" /> 
+  </joint>
+
+  <transmission name="rear_motor_left">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="rear_left_shaft_joint">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="rear_motor_left">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  </actuator>
+  </transmission>
+
+  <transmission name="rear_motor_right">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="rear_right_shaft_joint">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="rear_motor_right">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  </actuator>
+  </transmission>
+
+  <transmission name="left_castor_motor">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="front_left_castor_joint">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="left_castor_motor">
+    <mechanicalReduction>50</mechanicalReduction>
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </actuator>
+  </transmission>
+
+  <transmission name="right_castor_motor">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="front_right_castor_joint">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="right_castor_motor">
+    <mechanicalReduction>50</mechanicalReduction>
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </actuator>
+  </transmission>
+
+</robot>
