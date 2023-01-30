@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="UR3_Assembly">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.115730098013254 -0.0911496694687476 0.0634177790507186"
+        rpy="0 0 0" />
+      <mass
+        value="2.65145043916468" />
+      <inertia
+        ixx="0.00437179269564763"
+        ixy="2.92879474816591E-35"
+        ixz="-2.39260158201781E-35"
+        iyy="0.00437179269564763"
+        iyz="-3.27146474496848E-19"
+        izz="0.00438480872973141" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR3_Assembly/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR3_Assembly/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="first_link">
+    <inertial>
+      <origin
+        xyz="0.00510797950832012 0.063262556308936 3.63073702353001E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.806816715294919" />
+      <inertia
+        ixx="0.00132079661195612"
+        ixy="-1.72167081908303E-05"
+        ixz="1.38902963390804E-08"
+        iyy="0.000966684561983695"
+        iyz="-2.21358720364282E-09"
+        izz="0.00142124758620699" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR3_Assembly/meshes/first_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR3_Assembly/meshes/first_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="first_joint"
+    type="revolute">
+    <origin
+      xyz="0.11573 -0.09115 0.12164"
+      rpy="1.5708 0 -2.2348" />
+    <parent
+      link="base_link" />
+    <child
+      link="first_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="10"
+      velocity="100" />
+  </joint>
+  <link
+    name="second_link">
+    <inertial>
+      <origin
+        xyz="0.113483048940672 0.0653101952125634 9.38975048714319E-07"
+        rpy="0 0 0" />
+      <mass
+        value="2.81340581300353" />
+      <inertia
+        ixx="0.00282809240557842"
+        ixy="-2.17072051682344E-05"
+        ixz="-3.79933638332543E-08"
+        iyy="0.00505547002740333"
+        iyz="-2.19858323557216E-06"
+        izz="0.00572420849238521" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR3_Assembly/meshes/second_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR3_Assembly/meshes/second_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="second_joint"
+    type="revolute">
+    <origin
+      xyz="0.055 0.066 0"
+      rpy="3.1416 -0.10306 1.5708" />
+    <parent
+      link="first_link" />
+    <child
+      link="second_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="100" />
+  </joint>
+  <link
+    name="third_link">
+    <inertial>
+      <origin
+        xyz="0.0888600616857061 -0.0461383689444906 0.00319654075879075"
+        rpy="0 0 0" />
+      <mass
+        value="1.25327255661744" />
+      <inertia
+        ixx="0.000657018633006924"
+        ixy="5.76194775301552E-05"
+        ixz="-4.98864703730121E-05"
+        iyy="0.00201508634983225"
+        iyz="2.06830591517436E-06"
+        izz="0.0020417686354171" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR3_Assembly/meshes/third_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.101960784313725 0.101960784313725 0.101960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR3_Assembly/meshes/third_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="third_joint"
+    type="revolute">
+    <origin
+      xyz="0.255 0.121 0.0005635"
+      rpy="-3.1313 0 0" />
+    <parent
+      link="second_link" />
+    <child
+      link="third_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="100" />
+  </joint>
+  <link
+    name="fourth_link">
+    <inertial>
+      <origin
+        xyz="7.63379934305419E-05 -0.0428059050849966 0.00426254367785278"
+        rpy="0 0 0" />
+      <mass
+        value="0.30889512913295" />
+      <inertia
+        ixx="0.000283256888436591"
+        ixy="2.25344542085988E-08"
+        ixz="-3.74203413816573E-07"
+        iyy="0.000195169678963978"
+        iyz="1.28509357019572E-06"
+        izz="0.000262555742468961" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR3_Assembly/meshes/fourth_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.725490196078431 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR3_Assembly/meshes/fourth_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="foruth_joint"
+    type="revolute">
+    <origin
+      xyz="0.22464 -0.0057068 0.00011371"
+      rpy="-1.8649 -1.3854 1.8633" />
+    <parent
+      link="third_link" />
+    <child
+      link="fourth_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="10"
+      velocity="100" />
+  </joint>
+  <link
+    name="fifth_link">
+    <inertial>
+      <origin
+        xyz="5.45482043716183E-05 -0.0427871400543967 -0.0039516959698899"
+        rpy="0 0 0" />
+      <mass
+        value="0.306273745143421" />
+      <inertia
+        ixx="0.000281969418245706"
+        ixy="1.71733352223334E-08"
+        ixz="2.97933729633028E-07"
+        iyy="0.000193879830366177"
+        iyz="-1.28771896075081E-06"
+        izz="0.00025998936740049" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR3_Assembly/meshes/fifth_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.725490196078431 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR3_Assembly/meshes/fifth_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fifth_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0011884 -0.1285 0.044984"
+      rpy="1.5704 -0.026408 0.013751" />
+    <parent
+      link="fourth_link" />
+    <child
+      link="fifth_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="10"
+      velocity="100" />
+  </joint>
+  <link
+    name="sixth_link">
+    <inertial>
+      <origin
+        xyz="0.00189837004808013 0.00853090126049849 -1.08550831989795E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.637771345203638" />
+      <inertia
+        ixx="0.000440097722083551"
+        ixy="-4.05893747238349E-06"
+        ixz="4.25523915605571E-09"
+        iyy="0.000368990444116953"
+        iyz="4.65415752039732E-10"
+        izz="0.000462535730726246" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR3_Assembly/meshes/sixth_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR3_Assembly/meshes/sixth_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sixth_joint"
+    type="revolute">
+    <origin
+      xyz="-0.00056474 -0.1285 0.042996"
+      rpy="-1.5839 0 1.5708" />
+    <parent
+      link="fifth_link" />
+    <child
+      link="sixth_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="10"
+      velocity="100" />
+  </joint>
+</robot>

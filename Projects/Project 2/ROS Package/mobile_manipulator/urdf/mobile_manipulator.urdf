@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="mobile_manipulator">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00319607622682661 0.180002969939367 0.297872363035518"
+        rpy="0 0 0" />
+      <mass
+        value="50" />
+      <inertia
+        ixx="0.63891812039133"
+        ixy="-1.25781907247513E-10"
+        ixz="-0.000733527900815365"
+        iyy="0.542408141562868"
+        iyz="1.60391311307086E-11"
+        izz="1.13742072534415" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="front_left_castor">
+    <inertial>
+      <origin
+        xyz="0.00484984769708152 -1.11022302462516E-16 -0.0114069352482241"
+        rpy="0 0 0" />
+      <mass
+        value="0.302449722252446" />
+      <inertia
+        ixx="0.000917502015816998"
+        ixy="1.23731686324888E-19"
+        ixz="9.60870987156195E-05"
+        iyy="0.000789860838300225"
+        iyz="-1.8267762154975E-19"
+        izz="0.000455967835223646" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/front_left_castor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/front_left_castor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_castor_joint"
+    type="revolute">
+    <origin
+      xyz="0.272814741306656 0.383202969953993 0.23622"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_left_castor" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="1000" />
+    <dynamics friction="1"/>
+  </joint>
+  <link
+    name="front_left_shaft">
+    <inertial>
+      <origin
+        xyz="0 0 -0.0635"
+        rpy="0 0 0" />
+      <mass
+        value="0.0858595098594949" />
+      <inertia
+        ixx="0.0001009908613904"
+        ixy="2.99244959851748E-38"
+        ixz="1.26927539495442E-38"
+        iyy="0.0001009908613904"
+        iyz="-3.2318755504395E-21"
+        izz="9.64668125467686E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/front_left_shaft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/front_left_shaft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_shaft_joint"
+    type="continuous">
+    <origin
+      xyz="0.0254000000000001 0.0635 -0.106172"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="front_left_castor" />
+    <child
+      link="front_left_shaft" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics friction="1"/>
+  </joint>
+  <link
+    name="front_left_wheel">
+    <inertial>
+      <origin
+        xyz="-1.01451296707911E-05 -0.000756356582647499 -0.0635"
+        rpy="0 0 0" />
+      <mass
+        value="1.36355537231825" />
+      <inertia
+        ixx="0.00450516535678402"
+        ixy="3.72058102490162E-10"
+        ixz="1.00066272375788E-19"
+        iyy="0.0045051930900881"
+        iyz="-5.57689498722482E-20"
+        izz="0.00835610176466815" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/front_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/front_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="front_left_shaft" />
+    <child
+      link="front_left_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="front_right_castor">
+    <inertial>
+      <origin
+        xyz="0.00484900708384495 -9.02938852160862E-05 -0.0114069352482241"
+        rpy="0 0 0" />
+      <mass
+        value="0.302449722252446" />
+      <inertia
+        ixx="0.000917457772132958"
+        ixy="-2.37599630155122E-06"
+        ixz="9.6070444154058E-05"
+        iyy="0.000789905081984266"
+        iyz="-1.78893812838525E-06"
+        izz="0.000455967835223646" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/front_right_castor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/front_right_castor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_castor_joint"
+    type="revolute">
+    <origin
+      xyz="0.272814741306656 -0.0231970300460073 0.23622"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_right_castor" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="1000" />
+    <dynamics friction="1"/>
+  </joint>
+  <link
+    name="front_right_shaft">
+    <inertial>
+      <origin
+        xyz="2.22044604925031E-16 0 0.0635000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="0.0858595098594949" />
+      <inertia
+        ixx="0.0001009908613904"
+        ixy="2.7662421850965E-23"
+        ixz="2.48815928255951E-21"
+        iyy="0.0001009908613904"
+        iyz="-3.94898122378412E-21"
+        izz="9.64668125467686E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/front_right_shaft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/front_right_shaft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_shaft_joint"
+    type="continuous">
+    <origin
+      xyz="0.0242133620585885 -0.0639618878537814 -0.106172"
+      rpy="-1.5707963267949 0 -0.0186189563116303" />
+    <parent
+      link="front_right_castor" />
+    <child
+      link="front_right_shaft" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics friction="1"/>
+  </joint>
+  <link
+    name="front_right_wheel">
+    <inertial>
+      <origin
+        xyz="-1.01451296707911E-05 -0.000756356582647499 0.0635000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="1.36355537231825" />
+      <inertia
+        ixx="0.00450516535678402"
+        ixy="3.72058102619301E-10"
+        ixz="2.84603070277445E-19"
+        iyy="0.0045051930900881"
+        iyz="-9.55478700473089E-20"
+        izz="0.00835610176466815" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/front_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/front_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="front_right_shaft" />
+    <child
+      link="front_right_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rear_left_castor">
+    <inertial>
+      <origin
+        xyz="1.11022302462516E-16 -0.0970023352921987 -0.0685888094893936"
+        rpy="0 0 0" />
+      <mass
+        value="0.165630168722885" />
+      <inertia
+        ixx="0.000170950243888681"
+        ixy="5.0578443182247E-20"
+        ixz="-3.29830690532305E-20"
+        iyy="0.000132557141788529"
+        iyz="1.14366499340477E-08"
+        izz="0.000193530591087973" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/rear_left_castor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/rear_left_castor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_castor_joint"
+    type="fixed">
+    <origin
+      xyz="-0.273285258693344 0.451782969953993 0.130175"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_left_castor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rear_left_shaft">
+    <inertial>
+      <origin
+        xyz="1.11022302462516E-16 -1.11022302462516E-16 -0.0685799999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.0679514721041126" />
+      <inertia
+        ixx="5.51726293118822E-05"
+        ixy="2.58732738125917E-22"
+        ixz="-6.57806775316306E-21"
+        iyy="5.51726293118822E-05"
+        iyz="-9.63988248762429E-21"
+        izz="7.75429241942671E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/rear_left_shaft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/rear_left_shaft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_shaft_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="rear_left_castor" />
+    <child
+      link="rear_left_shaft" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="rear_left_wheel">
+    <inertial>
+      <origin
+        xyz="-9.36913719649102E-05 -0.000751935501142942 -0.0685799999999999"
+        rpy="0 0 0" />
+      <mass
+        value="1.55942631528513" />
+      <inertia
+        ixx="0.00546334290510486"
+        ixy="4.09192546748377E-09"
+        ixz="2.12439983690879E-19"
+        iyy="0.00546337523567005"
+        iyz="1.67458855212982E-19"
+        izz="0.00981623598058744" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/rear_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/rear_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="rear_left_shaft" />
+    <child
+      link="rear_left_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rear_right_castor">
+    <inertial>
+      <origin
+        xyz="0 -0.0970023352921985 0.0685711905106061"
+        rpy="0 0 0" />
+      <mass
+        value="0.165630168722885" />
+      <inertia
+        ixx="0.000170950243888681"
+        ixy="4.43696443974892E-22"
+        ixz="6.08573031775317E-20"
+        iyy="0.000132557141788528"
+        iyz="1.14366499340132E-08"
+        izz="0.000193530591087973" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/rear_right_castor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/rear_right_castor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_castor_joint"
+    type="fixed">
+    <origin
+      xyz="-0.273285258693344 -0.0917770300460072 0.130175"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_right_castor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rear_right_shaft">
+    <inertial>
+      <origin
+        xyz="1.11022302462516E-16 -1.11022302462516E-16 0.06858"
+        rpy="0 0 0" />
+      <mass
+        value="0.0679514721041126" />
+      <inertia
+        ixx="5.51726293118822E-05"
+        ixy="2.78367937916384E-22"
+        ixz="1.85423853317149E-20"
+        iyy="5.51726293118822E-05"
+        iyz="8.33371468055621E-22"
+        izz="7.75429241942671E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/rear_right_shaft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/rear_right_shaft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_shaft_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="rear_right_castor" />
+    <child
+      link="rear_right_shaft" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="rear_right_wheel">
+    <inertial>
+      <origin
+        xyz="-9.36913719649102E-05 -0.000751935501143053 0.06858"
+        rpy="0 0 0" />
+      <mass
+        value="1.55942631528513" />
+      <inertia
+        ixx="0.00546334290510487"
+        ixy="4.09192546791388E-09"
+        ixz="-1.0020511966622E-18"
+        iyy="0.00546337523567005"
+        iyz="-8.19160629255159E-20"
+        izz="0.00981623598058745" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/rear_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/rear_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="rear_right_shaft" />
+    <child
+      link="rear_right_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="robot_base">
+    <inertial>
+      <origin
+        xyz="0 0 0.0407930949134881"
+        rpy="0 0 0" />
+      <mass
+        value="40" />
+      <inertia
+        ixx="0.00437179269564762"
+        ixy="-2.92879474816591E-35"
+        ixz="2.70738233273109E-19"
+        iyy="0.00437179269564762"
+        iyz="-2.3926015820178E-35"
+        izz="0.00438480872973141" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/robot_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/robot_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="robot_base"
+    type="fixed">
+    <origin
+      xyz="-0.00658525869334392 0.180002969953993 0.403023154484642"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="robot_base" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="first_link">
+    <inertial>
+      <origin
+        xyz="-0.00337964257052081 -0.00431800680524996 0.0632831520953769"
+        rpy="0 0 0" />
+      <mass
+        value="0.812933003492262" />
+      <inertia
+        ixx="0.001391222873496"
+        ixy="-4.59311731070834E-05"
+        ixz="1.06122999584423E-05"
+        iyy="0.00136844706560266"
+        iyz="1.35570695734901E-05"
+        izz="0.000972593788340976" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/first_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/first_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="first_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0990168455153581"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="robot_base" />
+    <child
+      link="first_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="330"
+      velocity="3.14" />
+    <dynamics friction="1"/>
+  </joint>
+  <link
+    name="second_link">
+    <inertial>
+      <origin
+        xyz="-0.0117249652598521 0.113380216554954 0.0655525773294785"
+        rpy="0 0 0" />
+      <mass
+        value="0.028123573064552" />
+      <inertia
+        ixx="0.00569102915065171"
+        ixy="0.000296337947717881"
+        ixz="7.98900400083256E-08"
+        iyy="0.00285620540335722"
+        iyz="-2.18147428304694E-05"
+        izz="0.00505042046755672" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/second_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/second_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="second_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0338961788338055 -0.0433133820021778 0.0660000000000001"
+      rpy="1.57079632679489 0 -0.664028256978918" />
+    <parent
+      link="first_link" />
+    <child
+      link="second_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="330"
+      velocity="3.14" />
+    <dynamics friction="1"/>
+  </joint>
+  <link
+    name="third_link">
+    <inertial>
+      <origin
+        xyz="-0.0158670003927452 -0.114698553849222 -0.0469580005536696"
+        rpy="0 0 0" />
+      <mass
+        value="0.0124575825968914" />
+      <inertia
+        ixx="0.00229066474066303"
+        ixy="-0.000192015997537938"
+        ixz="-2.29268122539127E-05"
+        iyy="0.000934394645560603"
+        iyz="-5.3747370178705E-05"
+        izz="0.00220295841491764" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/third_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/third_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="third_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0256742174831943 0.253704852320886 0.120997113246635"
+      rpy="3.14054681623012 0.0101921553184578 0.000807749939694129" />
+    <parent
+      link="second_link" />
+    <child
+      link="third_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="150"
+      velocity="3.14" />
+    <dynamics friction="1"/>
+  </joint>
+  <link
+    name="fourth_link">
+    <inertial>
+      <origin
+        xyz="-0.000398640384341453 -0.00217665684767709 -0.124547927569575"
+        rpy="0 0 0" />
+      <mass
+        value="0.00306273862762611" />
+      <inertia
+        ixx="0.000279111594581257"
+        ixy="-1.56179838492059E-05"
+        ixz="-2.2790888304727E-07"
+        iyy="0.000196741690864785"
+        iyz="-1.26751358860716E-06"
+        izz="0.000259985330566328" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/fourth_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.725490196078431 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/fourth_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fourth_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0230427335823264 -0.223455583154106 -0.00570683138097849"
+      rpy="-0.0244849750751399 -0.175795305652136 -3.14059771186311" />
+    <parent
+      link="third_link" />
+    <child
+      link="fourth_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="54"
+      velocity="6.28" />
+    <dynamics friction="1"/>
+  </joint>
+  <link
+    name="fifth_link">
+    <inertial>
+      <origin
+        xyz="-0.00222330534087445 -0.000290458065341781 -0.124894575549453"
+        rpy="0 0 0" />
+      <mass
+        value="0.00306273745143419" />
+      <inertia
+        ixx="0.000212340633482773"
+        ixy="-1.8489480303962E-05"
+        ixz="-4.02533595749976E-06"
+        iyy="0.00035155920598561"
+        iyz="-5.21211992416272E-07"
+        izz="0.000331534918624687" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/fifth_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/fifth_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fifth_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0081111 -0.044263 -0.1285"
+      rpy="1.5708 -1.4416 -0.18124" />
+    <parent
+      link="fourth_link" />
+    <child
+      link="fifth_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="54"
+      velocity="6.28" />
+    <dynamics friction="1"/>
+  </joint>
+  <link
+    name="sixth_link">
+    <inertial>
+      <origin
+        xyz="-2.22044604925031E-16 0 -0.0273077824736045"
+        rpy="0 0 0" />
+      <mass
+        value="0.00637771345203637" />
+      <inertia
+        ixx="0.000108562803458864"
+        ixy="-2.93285157986801E-20"
+        ixz="1.35525271560688E-20"
+        iyy="0.000108562803458864"
+        iyz="-7.72917564369549E-21"
+        izz="0.000159063531915951" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/sixth_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manipulator/meshes/sixth_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sixth_joint"
+    type="revolute">
+    <origin
+      xyz="-0.042638 -0.0055664 -0.1285"
+      rpy="-1.5708 0.18122 -1.441" />
+    <parent
+      link="fifth_link" />
+    <child
+      link="sixth_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="54"
+      velocity="6.28" />
+    <dynamics friction="1"/>
+  </joint>
+
+  <link name="dummy_link" >
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+  </link>
+  <joint name="dummy_joint" type="fixed">
+    <parent link="dummy_link"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 0" /> 
+  </joint>
+
+  <!--camera-->
+  <link name='camera'>
+     <visual name ='camera_visual'>
+	<geometry>
+	   <box size="0.005 0.025 0.025"/>
+	</geometry>
+     </visual>
+
+    <inertial>
+      	  <mass value="0.0001"/>
+          <origin xyz="0 0 0" rpy=" 0 0 0"/>
+	  <box_inertia m="0.1" x="0.005" y="0.025" z="0.025" />
+          <inertia
+            ixx="1e-6" ixy="0" ixz="0"
+            iyy="1e-6" iyz="0"
+            izz="1e-6"
+          />
+     </inertial>
+
+     <collision name='collision'>
+           <origin xyz="0 0 0" rpy=" 0 0 0"/> 
+           <geometry>
+             <box size="0.005 0.025 0.025"/>
+           </geometry>
+     </collision>
+  </link>
+
+<gazebo reference="camera">
+    <material>Gazebo/Black</material>
+</gazebo>
+
+  <joint type="fixed" name="camera_joint">
+    <origin xyz="0 0 -0.05" rpy="0 1.57 -0.1"/>
+    <child link="camera"/>
+    <parent link="sixth_link"/>
+    <axis xyz="0 0 0" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <dynamics damping="1.0" friction="1.0"/>
+  </joint>
+
+  <gazebo reference="camera">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>camera</cameraName>
+        <imageTopicName>rgb/image_raw</imageTopicName>
+        <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+        <frameName>camera</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <transmission name="rear_motor_left">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="rear_left_shaft_joint">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="rear_motor_left">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  </actuator>
+  </transmission>
+
+  <transmission name="rear_motor_right">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="rear_right_shaft_joint">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="rear_motor_right">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  </actuator>
+  </transmission>
+
+  <transmission name="left_castor_motor">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="front_left_castor_joint">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="left_castor_motor">
+    <mechanicalReduction>50</mechanicalReduction>
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </actuator>
+  </transmission>
+
+  <transmission name="right_castor_motor">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="front_right_castor_joint">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="right_castor_motor">
+    <mechanicalReduction>50</mechanicalReduction>
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </actuator>
+  </transmission>
+
+  <transmission name="first_link_motor">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="first_joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="first_link_motor">
+    <mechanicalReduction>50</mechanicalReduction>
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </actuator>
+  </transmission>
+
+  <transmission name="second_link_motor">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="second_joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="second_link_motor">
+    <mechanicalReduction>50</mechanicalReduction>
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </actuator>
+  </transmission>
+
+  <transmission name="third_link_motor">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="third_joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="third_link_motor">
+    <mechanicalReduction>50</mechanicalReduction>
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </actuator>
+  </transmission>
+
+  <transmission name="fourth_link_motor">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="fourth_joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="fourth_link_motor">
+    <mechanicalReduction>50</mechanicalReduction>
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </actuator>
+  </transmission>
+
+  <transmission name="fifth_link_motor">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="fifth_joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="fifth_link_motor">
+    <mechanicalReduction>50</mechanicalReduction>
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </actuator>
+  </transmission>
+
+  <transmission name="sixth_link_motor">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="sixth_joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="sixth_link_motor">
+    <mechanicalReduction>50</mechanicalReduction>
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </actuator>
+  </transmission>
+
+<!--  Gazebo plugin for control -->
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+			<robotNamespace>/mobile_manipulator</robotNamespace>
+			<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+			<legacyModeNS>true</legacyModeNS>
+		</plugin>
+	</gazebo>
+
+</robot>
