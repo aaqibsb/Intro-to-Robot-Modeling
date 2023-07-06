@@ -1,4 +1,4 @@
-## Intro-to-Robot-Modeling
+## Description
 Assignments and Projects using ROS1 (Noetic) done during the course.
 
 ### Project 1 
