@@ -5,4 +5,4 @@ Assignments and Projects using ROS1 (Noetic) done during the course.
 Simulation of a mobile robot.
 
 ### Project 2 
-Simulation of a high speed camera mounted on a mobile robot.
+Design and simulation of a high speed camera mounted on a mobile robot.
